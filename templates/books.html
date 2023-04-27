@@ -1,0 +1,13 @@
+{% from "bookcard.html" import bookCard %}
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    {% for row in rows %}
+    {{bookCard(row)}}
+    {% endfor %}
+  </div>
+</div>
+
+<script src="{{url_for('static', filename='js/home.js')}}"></script>
+{% endblock %}

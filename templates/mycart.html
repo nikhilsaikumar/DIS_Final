@@ -1,0 +1,67 @@
+{% from "bookcard.html" import bookCard %}
+{% extends "layoutal.html" %}
+{% block content %}
+<div class="container-fluid">
+  {% if not rows %}
+  <div class="row justify-content-center">
+    <div class="col-12">
+
+      <h1 class="p-5 text-secondary text-center">Cart is Empty</h1>
+
+    </div>
+  </div>
+  {% endif %}
+  <div class="row p-3" ">
+
+    <div class=" col-8" style="overflow-y: auto; max-height: 600px;">
+
+    <div class="row ">
+
+
+      {% for row in rows %}
+      <div class="col-4 p-3">
+        <form method="POST" action="{{ url_for('deletebook') }}">
+
+          <div class="card bg-dark text-white">
+            <input type="text" value="{{row[2]}}" hidden name="curl"><img
+              src="{{url_for('static', filename='img/'+row[2])}}" class="card-img-top" alt="..." width="100"
+              height="200">
+            <div class="card-body">
+              <input type="text" value="{{row[1]}}" hidden name="ctitle">
+              <p class="card-text">{{row[1]}}</p>
+              <button type="submit" class="btn btn-danger">Remove</button>
+            </div>
+          </div>
+        </form>
+      </div>
+      {% endfor %}
+
+    </div>
+
+  </div>
+  {% if rows %}
+
+  <div class="col-4 align-self-center">
+    <div class="card border-success mb-3">
+      <div class="card-header bg-transparent border-success text-success h3">Total Cost</div>
+      <div class="card-body text-success">
+        {% for row in rows %}
+        <h5 class="card-title ">For {{row[1]}}:<span class="text-danger float-end">5$</span> </h5>
+        {% endfor %}
+      </div>
+      <div class="card-footer bg-transparent border-success h3 text-success">
+        <p>Total Cost: <span class="float-end">{{ 5 * rows|length }}$</span></p>
+      </div>
+      <a class=" text-center btn-block text-uppercase pb-2" href="{{ url_for('checkout') }}"><button
+          class="btn btn-lg border-success">subscribe</button></a>
+    </div>
+
+  </div>
+
+  {% endif %}
+
+</div>
+
+</div>
+
+{% endblock %}

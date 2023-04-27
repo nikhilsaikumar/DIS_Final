@@ -1,0 +1,86 @@
+{% extends "layoutal.html" %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-12 pt-3">
+        <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="3000">
+                <img src="{{url_for('static', filename='img/book1.jpg')}}" class="d-block w-100" alt="..." height="500">
+                <div class="carousel-caption d-none d-md-block bg-light text-dark">
+                    <h5 class="display-5">Welcome to our online library! We strive to offer top-notch resources and services for your education and pleasure. Get any book for just $5.</h5>
+
+                  </div>
+              </div>
+              <div class="carousel-item" data-bs-interval="3000">
+                <img src="{{url_for('static', filename='img/book2.jpg')}}" class="d-block w-100" alt="..." height="500">
+                <div class="carousel-caption d-none d-md-block bg-light text-dark">
+                    <h5 class="display-5">Welcome to our online library! We strive to offer top-notch resources and services for your education and pleasure. Get any book for just $5.</h5>
+                  </div>
+              </div>
+            </div>
+            
+          </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 text-center p-5">
+        <h1 class="text-info">Check out these new book releases!</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12">
+        <div id="mycarousel2" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-2">
+                            
+                    </div>
+                    <div class="col-3">
+                                        
+                         <img src="{{url_for('static', filename='img/APJ.jpg')}}" class="d-block" alt="..." width="200" height="400">
+                        </div>
+                        <div class="col-3">
+                                        
+                            <img src="{{url_for('static', filename='img/Shadowy Stillness.jpg')}}" class="d-block" alt="..." width="200" height="400">
+                           </div>
+                           <div class="col-3">
+                                        
+                            <img src="{{url_for('static', filename='img/Sun Crossed.jpg')}}" class="d-block" alt="..." width="200" height="400">
+                           </div>
+                </div>
+
+              </div>
+              <div class="carousel-item">
+                <div class="row ms-5">
+                    <div class="col-2">
+                            
+                    </div>
+                    <div class="col-3">
+                        <img src="{{url_for('static', filename='img/Practical Law of Attraction.jpg')}}" class="d-block" alt="..." width="200" height="400">
+                    </div>
+                    <div class="col-3">
+                        <img src="{{url_for('static', filename='img/369.jpg')}}" class="d-block" alt="..." width="200" height="400">
+                    </div>
+                    <div class="col-3">
+                        <img src="{{url_for('static', filename='img/Gray Mountain.jpg')}}" class="d-block" alt="..." width="200" height="400">
+                    </div>
+                </div>
+
+              </div>
+ 
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#mycarousel2" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#mycarousel2" data-bs-slide="next">
+              <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,355 @@
+/* Author :  Gopi Chand, Kushal Reddy  */
+/* Description : CSS for About page */
+/* Set margin, padding, and box-sizing to be the same for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set the font family and background color for the body */
+body {
+    font-family: sans-serif;
+    background-color: #E1D7C6;
+
+}
+
+/* Style the login box */
+.login-box {
+    /* Set the width and height of the login box */
+    width: 320px;
+    height: 420px;
+    /* Set the background color, text color, and positioning of the login box */
+    background: #fff;
+    color: #000;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    /* Add a box shadow to the login box */
+    transform: translate(-50%, -50%);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    /* Set the padding and text alignment of the login box */
+    padding: 70px 30px;
+    text-align: center;
+}
+
+/* Style the heading of the login box */
+.login-box h2 {
+    /* Set the margin, padding, color, text alignment, and font size of the heading */
+    margin: 0 0 30px;
+    padding: 0;
+    color: #000;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Style the user input boxes */
+.user-box {
+    /* Set the position of the user input boxes */
+    position: relative;
+}
+
+.user-box input {
+    /* Set the width, padding, font size, color, margin, border, and background of the user input boxes */
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #000;
+    outline: none;
+    background: transparent;
+}
+
+.user-box label {
+    /* Set the position, padding, font size, color, and pointer events of the user input labels */
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #000;
+    pointer-events: none;
+    /* Set the transition time for the user input labels */
+    transition: 0.5s;
+}
+
+/* Move the user input label up and reduce the font size when the user inputs data */
+.user-box input:focus~label,
+.user-box input:valid~label {
+    top: -20px;
+    left: 0;
+    color: #000;
+    font-size: 12px;
+}
+
+/* Style the link */
+nav a {
+    /* Set display, text decoration, font size, text color, background color, padding, and border radius */
+    display: block;
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+    background: transparent;
+    padding: 14px 28px;
+    border-radius: 30px;
+    /* Add transition */
+    transition: 0.5s;
+}
+
+/* Style the hyperlink when hovered */
+nav a:hover {
+    /* Change background color and add box shadow */
+    /* background-color: #000; */
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    /* color: rgb(255, 255, 255); */
+    /* Change color and add border */
+    border: 1px solid white;
+}
+
+i {
+    font-size: 25px;
+
+}
+
+/* Header styles */
+header {
+    /* Set background color and text color for header, and align items and justify content to center and space between */
+    background-color: #116466;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Set display, align items, and flex-grow property for logo-container */
+.logo-container {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    text-align: center;
+}
+
+/* Set height and margin right for logo */
+.logo {
+    height: 50px;
+    margin-right: 10px;
+}
+
+/* Set display, align items, justify content, width, color, margin right, text decoration, font size, font weight, and text transform for navigation */
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 300px;
+}
+
+/* Set color, margin right, text decoration, font size, font weight, and text transform for navigation links */
+.navigation a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Set color for navigation links when hovered */
+.navigation a:hover {
+    color: #ddd;
+}
+
+
+/* For very small screens, move navigation to new line */
+@media only screen and (max-width: 400px) {
+
+    /*Set display and width for navigation */
+    .navigation {
+        display: block;
+        width: 100%;
+    }
+
+    /* Set display, width, and margin for navigation links */
+    .navigation a {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* For extra small devices (phones), change the width, height, padding, and font size of the login box, move navigation to a new line, and adjust the login box position */
+@media only screen and (max-width: 1080px) {
+
+    /*Set width, height, and padding for login box */
+    .login-box {
+        width: 280px;
+        height: auto;
+        padding: 50px 20px;
+    }
+
+    /* Set font size for login box heading */
+    .login-box h2 {
+        font-size: 20px;
+    }
+
+    /* Set display and width for navigation */
+    .navigation {
+        display: block;
+        width: 100%;
+    }
+
+    /* Set display, width, and margin for navigation links */
+    .navigation a {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Adjust login box position */
+    .login-box {
+        top: 60%;
+    }
+}
+
+/* Medium devices (desktops) */
+/* For medium devices (desktops), change the width, height, padding, and font size of the login box, and adjust the navigation width*/
+@media only screen and (min-width: 768px) and (max-width: 1200px) {
+
+    /*Set width, height, and padding for login box */
+    .login-box {
+        width: 500px;
+        height: auto;
+        padding: 70px 40px;
+    }
+
+    /* Set font size for login box heading */
+    .login-box h2 {
+        font-size: 24px;
+    }
+
+    /* Set navigation width */
+    .navigation {
+        width: 300px;
+    }
+}
+
+/* Large devices (desktops) */
+/* For large devices (desktops), change the width, height, padding, and font size of the login box */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+
+    /*Set width, height, and padding for login box */
+    .login-box {
+        width: 600px;
+        height: auto;
+        padding: 80px 50px;
+    }
+
+    /* Set font size for login box heading */
+    .login-box h2 {
+        font-size: 26px;
+    }
+}
+
+/* Extra large devices (large desktops) */
+/* For Extra large devices (desktops), change the width, height, padding, and font size of the login box */
+@media only screen and (min-width: 1200px) {
+
+    /*Set width, height, and padding for login box */
+    .login-box {
+        width: 700px;
+        height: auto;
+        padding: 90px 60px;
+    }
+
+    /* Set font size for login box heading */
+    .login-box h2 {
+        font-size: 28px;
+    }
+}
+
+/* set a margin-bottom of 40px for all section elements */
+section {
+    margin-bottom: 40px;
+}
+
+/* set the font size, font weight, and margin-top for all h2 elements */
+h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 0;
+}
+
+/* set the margin to 0 for all p elements */
+p {
+    margin: 0;
+}
+
+/* Style the team table */
+#t01 {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#t01 th,
+#t01 td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+#t01 th {
+    background-color: #333;
+    color: #fff;
+}
+
+#t01 tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style the images in the table */
+#t01 img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+footer {
+    background-color: #333;
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.footer-wrapper p {
+    margin: 0;
+    font-size: 14px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}

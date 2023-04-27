@@ -1,0 +1,19 @@
+{% from "bookcard.html" import bookCard %}
+{% extends "layoutal.html" %}
+{% block content %}
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h1 class="{{rows[2]}}">{{rows[1]}}</h1>
+    </div>
+  </div>
+  <div class="row">
+    {% for row in rows[0] %}
+
+    {{bookCard(row)}}
+
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock %}

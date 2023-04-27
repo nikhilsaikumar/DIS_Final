@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="container-fluid">
+    <div class="row justify-content-center p-5">
+        <div class="col-8">
+            <div class="card text-white bg-dark mb-3 p-5">
+                <div class="card-header h5 text-center display-4">Login</div>
+                <div class="card-body">
+                    <div class="row justify-content-center">
+                        <div class="col-8">
+                            <form   method="POST" action="{{ url_for('login')}}">
+                                <div class="mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="text" class="form-control" id="email" name="email" required onkeyup="emailcheck(event)" onclick="emailcheckclick(event)">
+                                    <div class="invalid-feedback" id="ne">
+                                        
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="password" class="form-label">Password</label>
+                                    <input type="password" class="form-control" id="password" name="password" required onkeyup="Passwordcheck(event)" onclick="Passwordcheck(event)">
+                                    <div class="invalid-feedback" id="pe"></div>
+                                </div>
+                                <div class="d-grid pb-3">
+                                    <button class="btn btn-primary" type="submit" id="mybtnlogin">Login</button>
+                                    <div>
+                                        {% if msg=="e" %}
+    
+                                        <span class="mt-3 text-danger">
+                                            The email was not found. Please try again or register.
+                                            </span>
+    
+                                        {% endif %}
+                                    </div>
+                                </div>
+                                <div class="d-grid pb-3">
+                                    <span>Don't have an account?<span><a class="text-primary ms-1" href="{{ url_for('signup') }}">Sign Up</a></span></span>
+                                </div>
+                              </form>
+                        </div>
+                      </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+  
+</div>
+<script src="{{url_for('static', filename='js/login.js')}}"></script>
+{% endblock %}
