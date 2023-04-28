@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template,request
 import sqlite3
+import re
 
 app = Flask(__name__)
 app.config['email']=""
@@ -117,6 +118,28 @@ def book():
         return render_template('booksal.html',rows=[rows,'',''])
     else:
         return render_template('books.html',rows=rows)
+    
+
+    
+@app.route("/search",methods=["POST"])
+def search ():
+    word=request.form['word'].lower()
+    print(word)
+    regx = r"(^" +re.escape(word) + r")"
+    num_list=[]
+    con=sqlite3.connect('database.db')
+    cur = con.cursor()
+    cur.execute("select * from books")
+    rows = cur.fetchall()
+    for row in rows:
+        val=str(row[1]).lower()
+        if(re.search(regx,val)):
+            num_list.append(row)
+    if(app.config['email']):
+        return render_template("booksal.html",rows = [num_list,'',''])
+    else:
+        return render_template("books.html",rows = num_list)
+    con.close()
 @app.route("/checkout")
 def checkout():
     con=sqlite3.connect('database.db')

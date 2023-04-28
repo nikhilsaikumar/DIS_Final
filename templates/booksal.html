@@ -2,6 +2,22 @@
 {% extends "layoutal.html" %}
 {% block content %}
 <div class="container-fluid">
+
+  <div class="row justify-content-center">
+    <div class="col-8 p-5">
+      <form class="d-flex" role="search" method="post" action="{{url_for('search')}}">
+        <input class="form-control me-2" type="search" placeholder="Search" name="word" aria-label="Search">
+        <button class="btn btn-dark" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+  {% if not rows[0] %}
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <h1 class="p-5 text-secondary text-center">No Book Found</h1>
+    </div>
+  </div>
+  {% endif %}
   <div class="row justify-content-center">
     <div class="col-12">
       <h1 class="{{rows[2]}}">{{rows[1]}}</h1>
@@ -9,11 +25,8 @@
   </div>
   <div class="row">
     {% for row in rows[0] %}
-
     {{bookCard(row)}}
-
     {% endfor %}
   </div>
 </div>
-
 {% endblock %}
