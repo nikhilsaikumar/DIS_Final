@@ -59,7 +59,7 @@ This project was created by Kushal Reddy , Nikhil Kumar , Shanmukh Peela and Gop
 ### CSS
 ### JS
 ### Bootstrap
-### FLask
+### Flask
 ### Python
 
 A brief overview of the website's architecture
