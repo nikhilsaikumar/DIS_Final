@@ -24,11 +24,13 @@ Check out books
 Return books
 
 # Requirements
+
 A web browser
 
 An internet connection
 
 # Installation
+
 Clone the repository on GitHub.
 
 Install the necessary dependencies.
@@ -47,17 +49,18 @@ Check out a book.
 Return a book.
 
 Credits
-This project was created by Gopi Chand Yenikapalli , Kushal Reddy , Nikhil Kumar , Shanmukh Peela
+This project was created by Kushal Reddy , Nikhil Kumar , Shanmukh Peela and Gopi Chand Yenikapalli 
 
 
 
 # A list of the technologies used to build the website
-## HTML
-## CSS
-## JS
-## Bootstrap
-## FLask
-## Python
+
+### HTML
+### CSS
+### JS
+### Bootstrap
+### FLask
+### Python
 
 A brief overview of the website's architecture
 
